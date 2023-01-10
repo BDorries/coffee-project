@@ -2,28 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Coffee House</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a88297ca40.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <nav class="top-banner">
+
     <h1>Coffee House</h1>
 
-    <form class="submit">
-        <input id="searchbar" class="searchbar" type="text" placeholder="Search..." name="search">
+    <div class="dropdown">
+        <button id="btn1"><i class="fa-solid fa-bars fa-2x"></i></button>
 
-        <label for="roast-selection"></label>
-        <select class="form" id="roast-selection">
-            <option selected>All...</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
+        <form id="myDropDown" class="submit show">
+            <input id="searchbar" class="searchbar" type="text" placeholder="Search..." name="search">
 
-        <input id="submit" type="submit" />
+            <label for="roast-selection"></label>
+            <select class="searchbar" id="roast-selection">
+                <option selected>All...</option>
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
 
-    </form>
+            <input id="submit" type="submit" />
+        </form>
+
+    </div>
 </nav>
+
 <!--<table>-->
 <!--    <thead>-->
 <!--    <tr>-->

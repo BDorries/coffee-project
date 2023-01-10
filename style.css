@@ -13,6 +13,7 @@ html{
 .top-banner{
     display:flex;
     justify-content:space-between;
+    align-items:center;
     background-color: #a1573b;
     margin: 0px;
     padding: 0px 20px;
@@ -28,7 +29,6 @@ html{
     text-shadow: 2px 2px 4px black;
     font-size: 50px;
     margin:10px;
-
 }
 #roast-selection, #submit{
     width:75px;
@@ -38,6 +38,7 @@ html{
     height: 30px;
     margin:0px;
     background: #f5ece6;
+    box-shadow: 2px 2px 4px black;
 }
 .searchbar{
     width:100px;
@@ -47,6 +48,7 @@ html{
     height: 25px;
     margin:0px;
     background: #f5ece6;
+    box-shadow: 2px 2px 4px black;
 }
 .card{
     border: 2px solid lightgrey;
@@ -83,5 +85,27 @@ hr{
 .cards{
     display:flex;
     flex-wrap:wrap;
-
+}
+#btn1{
+    align-items: center;
+    color: #f5ece6;
+    text-shadow: 2px 2px 4px black;
+    background-color: #a1573b;
+    border:none;
+}
+#btn1:hover{
+    cursor: pointer;
+}
+.show{
+    display:block;
+}
+@media screen and (min-width:650px) {
+    .btn1 {
+        display:none;
+    }
+}
+@media screen and (max-width:650px) {
+    .submit {
+        display:none;
+    }
 }
