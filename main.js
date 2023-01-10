@@ -35,39 +35,40 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
-    let recorded = document.getElementById("searchbar").value;
-    if (selectedRoast === "All..."){
-        cardsDiv.innerHTML = renderCoffees(coffees);
-    } else{
-        coffees.forEach(function(coffee) {
-            if (coffee.name.indexOf(recorded) >= 0) {
-                filteredCoffees.push(coffee);
-            } else
-                if (coffee.roast === selectedRoast) {
-                filteredCoffees.push(coffee);
-            }
-        });
+    let recorded = document.getElementById("searchbar").value.trim();
+    // if (selectedRoast === "All..."){
+    //     cardsDiv.innerHTML = renderCoffees(coffees);
+    // }
+
+    coffees.forEach(function(coffee) {
+        if(selectedRoast === "All..." && recorded === ""){
+            filteredCoffees.push(coffee);
+            return;
+        }
+        if (selectedRoast !== "All..." && coffee.roast !== selectedRoast){
+            return;
+        }
+        if (coffee.name.includes(recorded) && coffee.roast === selectedRoast) {
+            filteredCoffees.push(coffee);
+            return;
+        }
+        if(selectedRoast === "All..." && coffee.name.includes(recorded)){
+            filteredCoffees.push(coffee);
+            return;
+        }
+    });
     cardsDiv.innerHTML = renderCoffees(filteredCoffees);
-    }
+
 }
+
+
 //navbar functionality
 function dropDown(){
-    document.getElementById("myDropDown").classList.toggle("show");
+    // document.getElementById("myDropDown").classList.add("show");
+    document.getElementById("myDropDown").style.display = "block";
 }
-document.querySelector("#btn1");
-
-window.onclick = function(event) {
-    if (!event.target.matches('.btn1')) {
-        var dropdowns = document.getElementsByClassName("searchbar");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
+let btn1 = document.querySelector("#btn1");
+btn1.addEventListener('click', dropDown);
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -88,12 +89,10 @@ var coffees = [
 ];
 
 let cardsDiv = document.querySelector('div.cards');
-let searchbar = document.getElementById("#searchbar");
-let submitButton = document.querySelector('#submit');
+let searchbar = document.getElementById("searchbar");
+// let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
-
-// if (document.getElementById('#searchbar').hasFocus()) {
-    searchbar.addEventListener("keyup", updateCoffees);
-// };
-
-submitButton.addEventListener('click', updateCoffees);
+searchbar.addEventListener("keyup", updateCoffees);
+// submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('change',updateCoffees)
+updateCoffees();

@@ -96,16 +96,20 @@ hr{
 #btn1:hover{
     cursor: pointer;
 }
+#btn1:active{
+
+}
 .show{
     display:block;
+
 }
 @media screen and (min-width:650px) {
-    .btn1 {
+    #btn1 {
         display:none;
     }
 }
 @media screen and (max-width:650px) {
-    .submit {
+    #myDropDown {
         display:none;
     }
 }
