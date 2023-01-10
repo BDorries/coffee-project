@@ -6,18 +6,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Coffee!</h1>
+<nav class="top-banner">
+    <h1>Coffee!</h1>
 
-<form>
-    <label for="roast-selection"></label>
-    <select id="roast-selection">
-        <option>light</option>
-        <option>medium</option>
-        <option>dark</option>
-    </select>
-    <input id="submit" type="submit" />
-</form>
+    <form class="submit">
+        <input id="searchbar" class="searchbar" type="text" placeholder="Search..." name="search">
 
+        <label for="roast-selection"></label>
+        <select class="form" id="roast-selection">
+            <option>light</option>
+            <option>medium</option>
+            <option>dark</option>
+        </select>
+
+        <input id="submit" type="submit" />
+
+    </form>
+</nav>
 <!--<table>-->
 <!--    <thead>-->
 <!--    <tr>-->
@@ -29,19 +34,7 @@
 <!--    <tbody id="coffees"></tbody>-->
 <!--</table>-->
 
-<!--<div class="card">-->
-<!--    <h2 class="card-title" id="list">Coffee</h2>-->
-<!--    <img class="image" src="img/testCoffee.jpeg" alt="Coffee Pic">-->
-<!--    <h3 class="roast-type">Dark</h3>-->
-<!--    <hr>-->
-<!--    <p class="card-body">-->
-<!--        Lorem ipsum dolor sit amet, consectetur-->
-<!--        adipisicing elit. Ab dicta dolorem earum-->
-<!--        facilis iure ut.-->
-<!--    </p>-->
-<!--</div>-->
-
-<div class="card"></div>
+<div class="cards"></div>
 
 <script src="main.js"></script>
 </body>

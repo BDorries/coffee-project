@@ -7,7 +7,47 @@
 /*    border: 1px solid black;*/
 /*    padding: 5px 10px;*/
 /*}*/
+html{
+    background-color: #f6f5f4;
+}
+.top-banner{
+    display:flex;
+    justify-content:space-between;
+    background-color: #a1573b;
+    margin: 0px;
+    padding: 0px 20px;
+    border: 2px solid black;
+}
+.submit{
+    display:flex;
+    align-items: center;
+}
 
+.top-banner h1{
+    color: #f5ece6;
+    text-shadow: 2px 2px 4px black;
+    font-size: 50px;
+    margin:10px;
+
+}
+#roast-selection, #submit{
+    width:75px;
+    border-top: 1px solid #f6f5f4;
+    border-bottom: 1px solid #f6f5f4;
+    border-radius: 5px;
+    height: 30px;
+    margin:0px;
+    background: #f5ece6;
+}
+.searchbar{
+    width:100px;
+    border-top: 1px solid #f6f5f4;
+    border-bottom: 1px solid #f6f5f4;
+    border-radius: 5px;
+    height: 25px;
+    margin:0px;
+    background: #f5ece6;
+}
 .card{
     border: 2px solid lightgrey;
     width: 200px;
@@ -15,6 +55,7 @@
     display: flex;
     flex-direction: column;
     background-color: #f5ece6;
+    margin:10px;
 }
 .card .image{
     padding: 0px 5px;
@@ -37,4 +78,10 @@ hr{
     width: 95%;
     border-top: 5px solid #a1573b;
     background-color: grey;
+}
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+
 }
