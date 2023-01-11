@@ -1,12 +1,6 @@
-/*table {*/
-/*    border-collapse: collapse;*/
-/*    margin: 15px 0;*/
-/*}*/
-
-/*td, th {*/
-/*    border: 1px solid black;*/
-/*    padding: 5px 10px;*/
-/*}*/
+body{
+    margin:0;
+}
 html{
     background-color: #d9bca3;
 }
@@ -15,7 +9,7 @@ html{
     justify-content:space-between;
     align-items:center;
     background-image: url("img/CoffeeBeanHeader.png");
-    margin: 0px;
+    margin: auto;
     padding: 0px 20px;
     border: 2px solid #59352d;
 }
@@ -29,6 +23,7 @@ html{
     text-shadow: 2px 2px 4px black;
     font-size: 50px;
     margin:10px;
+    font-family: Berkshire Swash, sans-serif;
 }
 #roast-selection{
     width:75px;
@@ -39,7 +34,7 @@ html{
     background: #f5ece6;
     box-shadow: 2px 2px 4px #59352d;
 }
-.searchbar{
+.searchbar, .logInBar{
     width:100px;
     border:1px solid #a3afbf;
     border-radius: 5px;
@@ -47,6 +42,7 @@ html{
     margin:5px 0px;
     background: #f5ece6;
     box-shadow: 2px 2px 4px #59352d;
+    font-family: Open Sans, sans-serif;
 }
 
 .buttons{
@@ -89,6 +85,7 @@ i{
     flex-direction: column;
     background-color: #f5ece6;
     margin:10px;
+    border-radius: 15px;
 }
 .card .image{
     padding: 0px 5px;
@@ -98,14 +95,18 @@ i{
 
 .card .card-title{
     margin: 0px;
+    padding: 2px;
     text-align: center;
-    color: #59352d;
-    text-shadow: 1px 1px 1px #BF5349;
+    color: #34201b;
+    /*text-shadow: 1px 1px 1px #BF5349;*/
+    font-family: Berkshire Swash, sans-serif;
+
 }
 .card .card-body{
     margin: 0px;
     padding: 0px 5px;
     color: #59352d;
+    font-family: Open Sans, sans-serif;
 }
 .card .roast-type{
     margin: 0px;
@@ -113,6 +114,7 @@ i{
     padding-top: 5px;
     color: #BF5349;
     /*text-shadow: 1px 1px 1px #59352d;*/
+    font-family: Open Sans, sans-serif;
 }
 hr{
     width: 95%;
@@ -124,28 +126,36 @@ hr{
     display:flex;
     flex-wrap:wrap;
 }
-.show-flex{
+.navbar{
     display:flex;
 }
-.show{
-    display:block;
-}
-
-.hide{
-    display: none;
+.dropdown{
+    position: relative;
+    display: inline-block;
 }
 .loginForm{
     display: none;
     flex-direction: column;
-    position: fixed;
+    align-items: center;
+    position: absolute;
     z-index: 1;
-    left: 60%;
-    top: 0;
-    background-color: #D9A689;
-    /*transform:translate(-40%,10%);*/
-    width: 300px;
-    height: 200px;
+    background-color: transparent;
+    min-width: 25%;
     text-align: center;
+    right: 5%;
+    padding:10px;
+}
+.searchForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    min-width: 25%;
+    text-align: center;
+    right: 5%;
+    padding:10px;
 }
 #modal-dimmer{
     width: 100vw;
@@ -217,6 +227,9 @@ hr{
 @media screen and (min-width:650px) {
     #btn1 {
         display:none;
+    }
+    .searchbar{
+        display:flex;
     }
 }
 @media screen and (max-width:650px) {
