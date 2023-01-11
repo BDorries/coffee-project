@@ -14,7 +14,7 @@ html{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background-color: #bf7256;
+    background-image: url("img/CoffeeBeanHeader.png");
     margin: 0px;
     padding: 0px 20px;
     border: 2px solid #59352d;
@@ -50,20 +50,30 @@ html{
 }
 
 .buttons{
-    align-items: center;
+    /*align-items: center;*/
     color: #f5ece6;
-    text-shadow: 2px 2px 4px #59352d;
-    background-color: #bf7256;
-    border:none;
+    text-shadow: 4px 4px 8px black;
+    background-color: transparent;
+    /*border:none;*/
+    padding:0px 5px 0px 5px;
+    margin: 2px;
+    border: 4px solid #f5ece6;
+    border-radius:50px;
 }
 .buttons:hover{
     cursor: pointer;
+}
+i{
+    margin:10px;
 }
 .dropdown{
     display:flex;
 }
 #signIn{
     justify-content:start;
+}
+#loginBtn{
+    color: #34201b;
 }
 .buttons:active{
     color: #59352d;
@@ -79,6 +89,7 @@ html{
 }
 .card .image{
     padding: 0px 5px;
+    margin:0px;
     align-items: center;
 }
 
@@ -119,16 +130,53 @@ hr{
     display: none;
 }
 
-.modal{
-    /*display: none;*/
+.modalContainer{
+    display:flex;
+    flex-direction: column;
     position: fixed;
     z-index: 1;
     left: 50%;
     top: 50%;
+    transform:translate(-50%,-50%);
     width: 300px;
     height: 300px;
-    background-color: white;
+    background-color: #D9A689;
+    border: 5px solid #59352d;
+    border-radius: 25px;
+    text-align: center;
 }
+.modalHeader{
+    margin:40px 0px 15px 0px;
+    color:#f5ece6;
+    text-shadow: 2px 2px 4px black;
+}
+.modalSubHeaders{
+    color:#f5ece6;
+    text-shadow: 2px 2px 4px black;
+    padding:10px;
+    font-size: large;
+}
+.modalBoxes{
+    margin:8px;
+    width:75%;
+    border:1px solid #a3afbf;
+    border-radius: 5px;
+    height: 30px;
+    /*margin:0px 5px;*/
+    background: #f5ece6;
+    box-shadow: 2px 2px 4px #59352d;
+    color:#a3afbf;
+}
+#modalBtn{
+    width:50%;
+    border:1px solid #a3afbf;
+    border-radius: 5px;
+    height: 30px;
+    background: #f5ece6;
+    box-shadow: 2px 2px 4px #59352d;
+    color:#34201b;
+}
+
 
 @media screen and (min-width:650px) {
     #btn1 {

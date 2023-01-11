@@ -31,7 +31,7 @@
 <!--            <button id="submit">Submit</button>-->
         </form>
         <button id="signIn" class="buttons"><i class="fa-regular fa-user fa-2x"></i></button>
-        <form>
+        <form class="hide">
             <input id="username" class="searchbar" type="text" placeholder="Username">
             <input id="password" class="searchbar" type="password" placeholder="Password">
             <input id="loginBtn" class="searchbar" type="submit" value="Submit">
@@ -41,12 +41,13 @@
 
 <div class="cards"></div>
 
-<div id="inputModal" class="modal">
-    <form>
-        <label for="coffeeName">Coffee Name</label><br>
-        <input type="text" id="coffeeName" name="Coffee Name" value="Coffee Name"><br>
-        <label for="roastType">Roast Type</label><br>
-        <input type="text" id="roastType" name="roastType" value="Roast Type"><br><br>
+<div id="inputModal" class="modalContainer">
+    <h1 class="modalHeader">Add A Coffee!</h1>
+    <form class="modalContent">
+        <label class="modalSubHeaders" for="coffeeName">Coffee Name</label><br>
+        <input class="modalBoxes" type="text" id="coffeeName" name="Coffee Name" value="Coffee Name"><br>
+        <label class="modalSubHeaders" for="roastType">Roast Type</label><br>
+        <input class="modalBoxes" type="text" id="roastType" name="roastType" value="Roast Type"><br><br>
         <button type="button" id="modalBtn">Submit</button>
     </form>
 
