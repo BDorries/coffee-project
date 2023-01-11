@@ -8,16 +8,16 @@
 /*    padding: 5px 10px;*/
 /*}*/
 html{
-    background-color: #f6f5f4;
+    background-color: #d9bca3;
 }
 .top-banner{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background-color: #a1573b;
+    background-color: #bf7256;
     margin: 0px;
     padding: 0px 20px;
-    border: 2px solid black;
+    border: 2px solid #59352d;
 }
 .submit{
     display:flex;
@@ -30,28 +30,46 @@ html{
     font-size: 50px;
     margin:10px;
 }
-#roast-selection, #submit{
+#roast-selection{
     width:75px;
-    border-top: 1px solid #f6f5f4;
-    border-bottom: 1px solid #f6f5f4;
+    border:1px solid #a3afbf;
     border-radius: 5px;
     height: 30px;
-    margin:0px;
+    margin:0px 5px;
     background: #f5ece6;
-    box-shadow: 2px 2px 4px black;
+    box-shadow: 2px 2px 4px #59352d;
 }
 .searchbar{
     width:100px;
-    border-top: 1px solid #f6f5f4;
-    border-bottom: 1px solid #f6f5f4;
+    border:1px solid #a3afbf;
     border-radius: 5px;
     height: 25px;
-    margin:0px;
+    margin:5px 0px;
     background: #f5ece6;
-    box-shadow: 2px 2px 4px black;
+    box-shadow: 2px 2px 4px #59352d;
+}
+
+.buttons{
+    align-items: center;
+    color: #f5ece6;
+    text-shadow: 2px 2px 4px #59352d;
+    background-color: #bf7256;
+    border:none;
+}
+.buttons:hover{
+    cursor: pointer;
+}
+.dropdown{
+    display:flex;
+}
+#signIn{
+    justify-content:start;
+}
+.buttons:active{
+    color: #59352d;
 }
 .card{
-    border: 2px solid lightgrey;
+    border: 2px solid #a3afbf;
     width: 200px;
     height: 350px;
     display: flex;
@@ -67,38 +85,32 @@ html{
 .card .card-title{
     margin: 0px;
     text-align: center;
+    color: #59352d;
+    text-shadow: 1px 1px 1px #BF5349;
 }
 .card .card-body{
     margin: 0px;
     padding: 0px 5px;
+    color: #59352d;
 }
 .card .roast-type{
     margin: 0px;
     padding-left: 5px;
+    padding-top: 5px;
+    color: #BF5349;
+    /*text-shadow: 1px 1px 1px #59352d;*/
 }
 hr{
     width: 95%;
-    border-top: 5px solid #a1573b;
-    background-color: grey;
+    border-top: 5px solid #59352d;
+    background-color: #a3afbf;
 }
 
 .cards{
     display:flex;
     flex-wrap:wrap;
 }
-#btn1{
-    align-items: center;
-    color: #f5ece6;
-    text-shadow: 2px 2px 4px black;
-    background-color: #a1573b;
-    border:none;
-}
-#btn1:hover{
-    cursor: pointer;
-}
-#btn1:active{
 
-}
 .show{
     display:block;
 

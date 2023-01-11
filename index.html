@@ -14,9 +14,9 @@
     <h1>Coffee House</h1>
 
     <div class="dropdown">
-        <button id="btn1"><i class="fa-solid fa-bars fa-2x"></i></button>
+        <button id="btn1" class="buttons"><i class="fa-solid fa-bars fa-2x"></i></button>
+        <form id="myDropDown">
 
-        <form id="myDropDown" class="submit">
             <input id="searchbar" class="searchbar" type="text" placeholder="Search..." name="search">
 
             <label for="roast-selection"></label>
@@ -27,9 +27,15 @@
                 <option>dark</option>
             </select>
 
+
 <!--            <button id="submit">Submit</button>-->
         </form>
-
+        <button id="signIn" class="buttons"><i class="fa-regular fa-user fa-2x"></i></button>
+        <form>
+            <input id="username" class="searchbar" type="text" placeholder="Username">
+            <input id="password" class="searchbar" type="password" placeholder="Password">
+            <input id="loginBtn" class="searchbar" type="submit" value="Submit">
+        </form>
     </div>
 </nav>
 
