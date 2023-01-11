@@ -4,6 +4,10 @@ body{
 html{
     background-color: #d9bca3;
 }
+.mainContent{
+    padding:10px;
+    margin:10px;
+}
 .top-banner{
     display:flex;
     justify-content:space-between;
@@ -91,6 +95,7 @@ i{
     padding: 0px 5px;
     margin:0px;
     align-items: center;
+    border-radius: 100px;
 }
 
 .card .card-title{

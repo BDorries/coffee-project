@@ -96,6 +96,17 @@ function getCoffeeDesc(coffee){
     }
 }
 
+function getCoffeeImage(coffee){
+    if (coffee.roast.toLowerCase() === 'light'){
+        return imgLight;
+    } else
+    if (coffee.roast.toLowerCase() === 'medium'){
+        return imgMedium;
+    } else
+    if (coffee.roast.toLowerCase() === 'dark'){
+        return imgDark;
+    }
+}
 //create a coffee
 function addCoffee(inputName, inputRoast){
     let coffee = {};
@@ -104,6 +115,7 @@ function addCoffee(inputName, inputRoast){
     coffee.name = inputName;
     coffee.roast = inputRoast;
     coffee.description = getCoffeeDesc(coffee);
+    coffee.image = getCoffeeImage(coffee);
     console.log(coffee);
     coffees.push(coffee);
 }
@@ -116,9 +128,9 @@ function submitModal(){
     addCoffee(modalCoffeeName, modalCoffeeRoast);
     updateCoffees();
 }
-let imgLight = "img/light-roast.svg";
-let imgMedium = "img/medium-roast.svg";
-let imgDark = "img/dark-roast.svg";
+let imgLight = "img/lightRoast.svg";
+let imgMedium = "img/mediumRoast.svg";
+let imgDark = "img/darkRoast.svg";
 
 let light = "Light brown in color, this roast is generally preferred for milder coffee varieties.";
 let medium = "This roast is medium brown in color with a stronger flavor and a non-oily surface.";
@@ -170,16 +182,17 @@ loginBtn.addEventListener('click', function(){
     }
     document.querySelector('#loginForm').style.display = "none";
 });
-document.addEventListener('click',function(e){
-    console.log(e);
-    if (e.target.id !== "loginIcon"){
-        document.querySelector('#loginForm').style.display = "none";
-    }
+// document.addEventListener('click',function(e){
+//     console.log(e);
+//     if (e.target.id !== "loginIcon"){
+//         document.querySelector('#loginForm').style.display = "none";
+//     }
 
     // if (e.target.id !== "hamburger" && document.documentElement.clientWidth < 650){
     //     document.querySelector('#myDropDown').style.display = "none";
     // }
-});
+// });
+
 //sign in menu
 let signInBtn = document.getElementById('signIn');
 signInBtn.addEventListener('click', function(){
