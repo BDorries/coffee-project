@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<div id="modal-dimmer"></div>
 <nav class="top-banner">
 
     <h1>Coffee House</h1>
@@ -27,15 +28,14 @@
                 <option>dark</option>
             </select>
 
-
-<!--            <button id="submit">Submit</button>-->
         </form>
         <button id="signIn" class="buttons"><i class="fa-regular fa-user fa-2x"></i></button>
-        <form class="hide">
+        <form id="loginForm" class="loginForm">
             <input id="username" class="searchbar" type="text" placeholder="Username">
             <input id="password" class="searchbar" type="password" placeholder="Password">
-            <input id="loginBtn" class="searchbar" type="submit" value="Submit">
+            <button type="button" id="loginBtn" class="searchbar" >Log in</button>
         </form>
+        <button id="addCoffeeBtn" class="buttons"><i class="fa-regular fa-plus fa-2x"></i></button>
     </div>
 </nav>
 

@@ -74,13 +74,25 @@ let btn1 = document.querySelector("#btn1");
 btn1.addEventListener('click', dropDown);
 
 //login functionality
-let username = document.querySelector("#username");
+let userName = document.querySelector("#username");
 let password = document.querySelector("#password");
 let loginBtn = document.querySelector("#loginBtn");
 
 function logIn(username,password){
     if(username === "admin" && password === "admin"){
     //TODO: display add a coffee function
+    }
+}
+function getCoffeeDesc(coffee){
+
+    if (coffee.roast.toLowerCase() === 'light'){
+        return light;
+    } else
+    if (coffee.roast.toLowerCase() === 'medium'){
+        return medium;
+    } else
+    if (coffee.roast.toLowerCase() === 'dark'){
+        return dark;
     }
 }
 
@@ -91,23 +103,18 @@ function addCoffee(inputName, inputRoast){
     coffee.id = lastID+1;
     coffee.name = inputName;
     coffee.roast = inputRoast;
-    coffee.description = function(){
-        if (coffee.roast.toLowerCase() === 'light'){
-            coffee.description = light;
-        } else
-        if (coffee.roast.toLowerCase() === 'medium'){
-            coffee.description = medium;
-        } else
-        if (coffee.roast.toLowerCase() === 'dark'){
-            coffee.description = dark;
-        }
-    }
+    coffee.description = getCoffeeDesc(coffee);
+    console.log(coffee);
     coffees.push(coffee);
 }
 
-function displayModal(){
-    modal.classList.add('hide');
-
+function submitModal(){
+    modal.style.display = "none";
+    let modalCoffeeName = document.getElementById('coffeeName').value;
+    let modalCoffeeRoast = document.getElementById('roastType').value;
+    document.querySelector('#modal-dimmer').style.display = "none";
+    addCoffee(modalCoffeeName, modalCoffeeRoast);
+    updateCoffees();
 }
 let imgLight = "img/light-roast.svg";
 let imgMedium = "img/medium-roast.svg";
@@ -134,12 +141,35 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark',description:dark, image:imgDark},
 ];
 
-let modalBtn = document.getElementById('modalBtn');
-modalBtn.addEventListener('click',displayModal);
-let modalCoffeeName = document.getElementById('coffeeName');
-let modalCoffeeRoast = document.getElementById('roastType');
-
+//modal
 let modal = document.getElementById('inputModal');
+let addCoffeeBtn = document.querySelector('#addCoffeeBtn');
+addCoffeeBtn.addEventListener('click', function (){
+    document.querySelector('#modal-dimmer').style.display = "block";
+    modal.style.display = "flex";
+});
+
+let modalBtn = document.getElementById('modalBtn');
+modalBtn.addEventListener('click',submitModal);
+
+
+
+
+//login Button
+loginBtn.addEventListener('click', function(){
+    if(userName.value === 'admin' && password.value === 'admin'){
+        //TODO: display add coffee button
+        document.querySelector('#addCoffeeBtn').style.display = "block";
+        console.log('worked');
+    }
+    document.querySelector('#loginForm').style.display = "none";
+});
+
+//sign in menu
+let signInBtn = document.getElementById('signIn');
+signInBtn.addEventListener('click', function(){
+   document.querySelector('#loginForm').style.display = "flex";
+});
 
 let cardsDiv = document.querySelector('div.cards');
 let searchbar = document.getElementById("searchbar");

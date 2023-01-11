@@ -78,6 +78,9 @@ i{
 .buttons:active{
     color: #59352d;
 }
+#addCoffeeBtn{
+    display: none;
+}
 .card{
     border: 2px solid #a3afbf;
     width: 200px;
@@ -121,7 +124,9 @@ hr{
     display:flex;
     flex-wrap:wrap;
 }
-
+.show-flex{
+    display:flex;
+}
 .show{
     display:block;
 }
@@ -129,12 +134,36 @@ hr{
 .hide{
     display: none;
 }
-
-.modalContainer{
-    display:flex;
+.loginForm{
+    display: none;
     flex-direction: column;
     position: fixed;
     z-index: 1;
+    left: 60%;
+    top: 0;
+    background-color: #D9A689;
+    /*transform:translate(-40%,10%);*/
+    width: 300px;
+    height: 200px;
+    text-align: center;
+}
+#modal-dimmer{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: #34201b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    display: none;
+
+}
+.modalContainer{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 2;
     left: 50%;
     top: 50%;
     transform:translate(-50%,-50%);
@@ -167,6 +196,9 @@ hr{
     box-shadow: 2px 2px 4px #59352d;
     color:#a3afbf;
 }
+.modalBoxes:focus{
+    color: #59352d;
+}
 #modalBtn{
     width:50%;
     border:1px solid #a3afbf;
@@ -175,6 +207,10 @@ hr{
     background: #f5ece6;
     box-shadow: 2px 2px 4px #59352d;
     color:#34201b;
+}
+.submitBtns:active{
+    background-color: #59352d;
+    color: blue;
 }
 
 
