@@ -64,15 +64,6 @@ function updateCoffees(e) {
 
 }
 
-
-//navbar functionality
-function dropDown(){
-    // document.getElementById("myDropDown").classList.add("show");
-    document.getElementById("myDropDown").style.display = "block";
-}
-let btn1 = document.querySelector("#btn1");
-btn1.addEventListener('click', dropDown);
-
 //login functionality
 let userName = document.querySelector("#username");
 let password = document.querySelector("#password");
@@ -171,27 +162,40 @@ modalBtn.addEventListener('click',submitModal);
 //     }
 // }
 
+//navbar functionality
+function dropDown(){
+    document.getElementById("myDropDown").style.display = "block";
+}
+let btn1 = document.querySelector("#btn1");
+btn1.addEventListener('click', dropDown);
 
 //login Button
 loginBtn.addEventListener('click', function(){
 
     if(userName.value === 'admin' && password.value === 'admin'){
-        //TODO: display add coffee button
         document.querySelector('#addCoffeeBtn').style.display = "block";
-        console.log('worked');
     }
     document.querySelector('#loginForm').style.display = "none";
 });
-// document.addEventListener('click',function(e){
-//     console.log(e);
-//     if (e.target.id !== "loginIcon"){
-//         document.querySelector('#loginForm').style.display = "none";
-//     }
+document.addEventListener('click',function(e){
+    console.log(e);
+    if (e.target.id !== "loginIcon" && e.target.id !== "username"&& e.target.id !== "password"){
+        document.querySelector('#loginForm').style.display = "none";
+    }
 
-    // if (e.target.id !== "hamburger" && document.documentElement.clientWidth < 650){
-    //     document.querySelector('#myDropDown').style.display = "none";
-    // }
-// });
+    if (e.target.id !== "hamburger" && document.documentElement.clientWidth < 650){
+        document.querySelector('#myDropDown').style.display = "none";
+    }
+});
+
+document.addEventListener('resize', function (){
+    if(document.documentElement.clientWidth < 650){
+        document.querySelector('#myDropDown').style.display = "none";
+    }
+    if(document.documentElement.clientWidth >= 650){
+        document.querySelector('#myDropDown').style.display = "block";
+    }
+})
 
 //sign in menu
 let signInBtn = document.getElementById('signIn');
