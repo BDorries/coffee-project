@@ -84,8 +84,29 @@ function logIn(username,password){
     }
 }
 
-//add a coffee function
-function addCoffee(){
+//create a coffee
+function addCoffee(inputName, inputRoast){
+    let coffee = {};
+    let lastID = coffees.length;
+    coffee.id = lastID+1;
+    coffee.name = inputName;
+    coffee.roast = inputRoast;
+    coffee.description = function(){
+        if (coffee.roast.toLowerCase() === 'light'){
+            coffee.description = light;
+        } else
+        if (coffee.roast.toLowerCase() === 'medium'){
+            coffee.description = medium;
+        } else
+        if (coffee.roast.toLowerCase() === 'dark'){
+            coffee.description = dark;
+        }
+    }
+    coffees.push(coffee);
+}
+
+function displayModal(){
+    modal.classList.add('hide');
 
 }
 
@@ -109,6 +130,13 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark',description:dark},
     {id: 14, name: 'French', roast: 'dark',description:dark},
 ];
+
+let modalBtn = document.getElementById('modalBtn');
+modalBtn.addEventListener('click',displayModal);
+let modalCoffeeName = document.getElementById('coffeeName');
+let modalCoffeeRoast = document.getElementById('roastType');
+
+let modal = document.getElementById('inputModal');
 
 let cardsDiv = document.querySelector('div.cards');
 let searchbar = document.getElementById("searchbar");
