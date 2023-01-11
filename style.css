@@ -231,6 +231,9 @@ hr{
     .searchbar{
         display:flex;
     }
+    #myDropDown {
+        display: flex;
+    }
 }
 @media screen and (max-width:650px) {
     #myDropDown {

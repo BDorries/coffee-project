@@ -152,11 +152,17 @@ addCoffeeBtn.addEventListener('click', function (){
 let modalBtn = document.getElementById('modalBtn');
 modalBtn.addEventListener('click',submitModal);
 
-
+//close popups if !target
+// document.onclick = function(e){
+//     if (e.target.id !== "loginForm"){
+//         document.querySelector('#loginForm').style.display = "none";
+//     }
+// }
 
 
 //login Button
 loginBtn.addEventListener('click', function(){
+
     if(userName.value === 'admin' && password.value === 'admin'){
         //TODO: display add coffee button
         document.querySelector('#addCoffeeBtn').style.display = "block";
@@ -164,7 +170,16 @@ loginBtn.addEventListener('click', function(){
     }
     document.querySelector('#loginForm').style.display = "none";
 });
+document.addEventListener('click',function(e){
+    console.log(e);
+    if (e.target.id !== "loginIcon"){
+        document.querySelector('#loginForm').style.display = "none";
+    }
 
+    // if (e.target.id !== "hamburger" && document.documentElement.clientWidth < 650){
+    //     document.querySelector('#myDropDown').style.display = "none";
+    // }
+});
 //sign in menu
 let signInBtn = document.getElementById('signIn');
 signInBtn.addEventListener('click', function(){
