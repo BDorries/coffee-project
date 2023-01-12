@@ -1,6 +1,6 @@
 "use strict"
 
-//display coffee cards
+//coffee card html
 function renderCard(coffee){
 
     let html= `<div class="card">`;
@@ -16,6 +16,7 @@ function renderCard(coffee){
     return html;
 }
 
+//display coffee cards
 function renderCoffees(coffees) {
     let html = '';
     for(let i = 0; i < coffees.length; i++) {
@@ -24,18 +25,11 @@ function renderCoffees(coffees) {
     return html;
 }
 
-
-
-
-//searchbar
+//searchbar functionality
 function updateCoffees(e) {
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
     let recorded = document.getElementById("searchbar").value.trim();
-    // if (selectedRoast === "All..."){
-    //     cardsDiv.innerHTML = renderCoffees(coffees);
-    // }
-
     coffees.forEach(function(coffee) {
         if(selectedRoast === "All..." && recorded === ""){
             filteredCoffees.push(coffee);
@@ -54,7 +48,6 @@ function updateCoffees(e) {
         }
     });
     cardsDiv.innerHTML = renderCoffees(filteredCoffees);
-
 }
 
 //login functionality
@@ -67,8 +60,9 @@ function logIn(username,password){
     //TODO: display add a coffee function
     }
 }
-function getCoffeeDesc(coffee){
 
+//display associated coffee description on new card
+function getCoffeeDesc(coffee){
     if (coffee.roast.toLowerCase() === 'light'){
         return light;
     } else
@@ -80,6 +74,7 @@ function getCoffeeDesc(coffee){
     }
 }
 
+//display associated coffee image on new card
 function getCoffeeImage(coffee){
     if (coffee.roast.toLowerCase() === 'light'){
         return imgLight;
@@ -91,7 +86,8 @@ function getCoffeeImage(coffee){
         return imgDark;
     }
 }
-//create a coffee
+
+//create a new coffee card
 function addCoffee(inputName, inputRoast){
     let coffee = {};
     let lastID = coffees.length;
@@ -104,6 +100,7 @@ function addCoffee(inputName, inputRoast){
     coffees.push(coffee);
 }
 
+//submit modal button
 function submitModal(){
     modal.style.display = "none";
     let modalCoffeeName = document.getElementById('coffeeName').value;
@@ -112,14 +109,18 @@ function submitModal(){
     addCoffee(modalCoffeeName, modalCoffeeRoast);
     updateCoffees();
 }
+
+//variables for coffee images
 let imgLight = "img/lightRoast.svg";
 let imgMedium = "img/mediumRoast.svg";
 let imgDark = "img/darkRoast.svg";
 
+//variables for coffee description
 let light = "Light brown in color, this roast is generally preferred for milder coffee varieties.";
 let medium = "This roast is medium brown in color with a stronger flavor and a non-oily surface.";
 let dark = "This roast produces shiny black beans with an oily surface and a pronounced bitterness.";
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+
+//coffees array from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light',description:light, image:imgLight},
     {id: 2, name: 'Half City', roast: 'light',description:light, image:imgLight},
@@ -137,7 +138,7 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark',description:dark, image:imgDark},
 ];
 
-//modal
+//modal functionality
 let modal = document.getElementById('inputModal');
 let addCoffeeBtn = document.querySelector('#addCoffeeBtn');
 addCoffeeBtn.addEventListener('click', function (){
@@ -148,21 +149,12 @@ addCoffeeBtn.addEventListener('click', function (){
 let modalBtn = document.getElementById('modalBtn');
 modalBtn.addEventListener('click',submitModal);
 
-//close popups if !target
-// document.onclick = function(e){
-//     if (e.target.id !== "loginForm"){
-//         document.querySelector('#loginForm').style.display = "none";
-//     }
-// }
-
 //navbar functionality
 function dropDown(){
     document.getElementById("myDropDown").style.display = "block";
 }
-let btn1 = document.querySelector("#btn1");
-btn1.addEventListener('click', dropDown);
 
-//login Button
+//login Button functionality
 loginBtn.addEventListener('click', function(){
 
     if(userName.value === 'admin' && password.value === 'admin'){
@@ -182,32 +174,21 @@ loginBtn.addEventListener('click', function(){
     document.querySelector('#loginForm').style.display = "none";
 });
 
+//remove button functionality
 function deleteCoffeeById(coffeeId){
-    let target = coffees[indexOf(coffeeId)];
-    console.log(target)
+    let target = coffees.findIndex(x => x.id === coffeeId);
+    console.log(target);
     coffees.splice(target,1);
 }
 
+//closes login dropdown
 document.addEventListener('click',function(e){
     if (e.target.id !== "loginIcon" && e.target.id !== "username"&& e.target.id !== "password"){
         document.querySelector('#loginForm').style.display = "none";
     }
-
-    // if (e.target.id !== "hamburger" && document.documentElement.clientWidth < 650){
-    //     document.querySelector('#myDropDown').style.display = "none";
-    // }
 });
 
-// document.addEventListener('resize', function (){
-//     if(document.documentElement.clientWidth < 650){
-//         document.querySelector('#myDropDown').style.display = "none";
-//     }
-//     if(document.documentElement.clientWidth >= 650){
-//         document.querySelector('#myDropDown').style.display = "flex";
-//     }
-// })
-
-//sign in menu
+//sign in menu functionality
 let signInBtn = document.getElementById('signIn');
 signInBtn.addEventListener('click', function(){
    document.querySelector('#loginForm').style.display = "flex";
@@ -215,9 +196,8 @@ signInBtn.addEventListener('click', function(){
 
 let cardsDiv = document.querySelector('div.cards');
 let searchbar = document.getElementById("searchbar");
-// let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
+
 searchbar.addEventListener("keyup", updateCoffees);
-// submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change',updateCoffees)
 updateCoffees();
