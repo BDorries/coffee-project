@@ -89,6 +89,7 @@ i{
     flex-direction: column;
     background-color: #f5ece6;
     border-radius: 15px;
+    box-shadow: 4px 4px 4px #3f2a21;
 }
 .card .image{
     padding: 0 5px;

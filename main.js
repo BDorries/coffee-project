@@ -58,6 +58,7 @@ function updateCoffees(e) {
     removeBtns.forEach(function(removeBtn){
         removeBtn.addEventListener("click", function (e){
             let coffeeId = parseInt(e.target.dataset.id);
+            console.log(coffeeId);
             deleteCoffeeById(coffeeId);
             updateCoffees();
         })
