@@ -1,7 +1,13 @@
 "use strict"
 
+var isAdmin = false;
+
 //coffee card html
 function renderCard(coffee){
+    let loggedInStr = `style="display: none;"`
+    if(isAdmin){
+        loggedInStr = "";
+    }
 
     let html= `<div class="card">`;
     html += `<h2 class="card-title">${coffee.name}</h2>`;
@@ -11,7 +17,7 @@ function renderCard(coffee){
     html += `<p class="card-body">`;
     html += `${coffee.description}`;
     html += `</p>`;
-    html += `<button class="removeBtn"><i data-id="${coffee.id}" class="fa-solid fa-x"></i></button>`;
+    html += `<button data-id="${coffee.id}" type="button" class="removeBtn" ${loggedInStr}><i class="fa-solid fa-x"></i></button>`;
     html += `</div>`;
     return html;
 }
@@ -48,6 +54,14 @@ function updateCoffees(e) {
         }
     });
     cardsDiv.innerHTML = renderCoffees(filteredCoffees);
+    let removeBtns = document.querySelectorAll('.removeBtn');
+    removeBtns.forEach(function(removeBtn){
+        removeBtn.addEventListener("click", function (e){
+            let coffeeId = parseInt(e.target.dataset.id);
+            deleteCoffeeById(coffeeId);
+            updateCoffees();
+        })
+    });
 }
 
 //login functionality
@@ -158,17 +172,11 @@ function dropDown(){
 loginBtn.addEventListener('click', function(){
 
     if(userName.value === 'admin' && password.value === 'admin'){
+        isAdmin = true;
         document.querySelector('#addCoffeeBtn').style.display = "block";
         let removeBtns = document.querySelectorAll('.removeBtn');
         removeBtns.forEach(function(removeBtn){
             removeBtn.style.display = "block";
-            removeBtn.addEventListener("click", function (e){
-                let coffeeId = parseInt(e.target.dataset.id);
-                console.log(coffeeId);
-                // coffees.splice(coffeeId,1);
-                deleteCoffeeById(coffeeId);
-                updateCoffees();
-            })
         });
     }
     document.querySelector('#loginForm').style.display = "none";
@@ -176,14 +184,13 @@ loginBtn.addEventListener('click', function(){
 
 //remove button functionality
 function deleteCoffeeById(coffeeId){
-    let target = coffees.findIndex(x => x.id === coffeeId);
-    console.log(target);
+    let target = coffees.findIndex(coffee => coffee.id === coffeeId);
     coffees.splice(target,1);
 }
 
 //closes login dropdown
 document.addEventListener('click',function(e){
-    if (e.target.id !== "loginIcon" && e.target.id !== "username"&& e.target.id !== "password"){
+    if (e.target.id !== "loginIcon" && e.target.id !== "username"&& e.target.id !== "password" && e.target.id !=="signIn"){
         document.querySelector('#loginForm').style.display = "none";
     }
 });
