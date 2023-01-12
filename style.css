@@ -92,14 +92,14 @@ i{
     border-radius: 15px;
 }
 .card .image{
-    padding: 0px 5px;
-    margin:0px;
+    padding: 0 5px;
+    margin:0;
     align-items: center;
     border-radius: 100px;
 }
 
 .card .card-title{
-    margin: 0px;
+    margin: 0;
     padding: 2px;
     text-align: center;
     color: #34201b;
@@ -108,13 +108,13 @@ i{
 
 }
 .card .card-body{
-    margin: 0px;
-    padding: 0px 5px;
+    margin: 0;
+    padding: 0 5px;
     color: #59352d;
     font-family: Open Sans, sans-serif;
 }
 .card .roast-type{
-    margin: 0px;
+    margin: 0;
     padding-left: 5px;
     padding-top: 5px;
     color: #BF5349;
@@ -125,10 +125,10 @@ i{
     position:absolute;
     border-radius: 100px;
     border: 2px solid #a3afbf;
-    margin:3px;
+    margin:2px;
     color:#BF5349;
     background-color: #f5ece6;
-    padding:0px;
+    padding:0;
     display:none;
 }
 .removeBtn:hover{
