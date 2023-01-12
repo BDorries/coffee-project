@@ -88,7 +88,6 @@ i{
     display: flex;
     flex-direction: column;
     background-color: #f5ece6;
-    margin:10px;
     border-radius: 15px;
 }
 .card .image{
@@ -142,7 +141,6 @@ hr{
     border-top: 5px solid #59352d;
     background-color: #a3afbf;
 }
-
 .cards{
     width: 100%;
     display:grid;
