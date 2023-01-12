@@ -1,14 +1,13 @@
 "use strict"
 
-var isAdmin = false;
 
 //coffee card html
+var isAdmin = false;
 function renderCard(coffee){
     let loggedInStr = `style="display: none;"`
     if(isAdmin){
         loggedInStr = "";
     }
-
     let html= `<div class="card">`;
     html += `<h2 class="card-title">${coffee.name}</h2>`;
     html += `<img class="image" src="${coffee.image}" alt="Coffee Pic">`;
@@ -53,6 +52,7 @@ function updateCoffees(e) {
             return;
         }
     });
+    //making remove buttons work
     cardsDiv.innerHTML = renderCoffees(filteredCoffees);
     let removeBtns = document.querySelectorAll('.removeBtn');
     removeBtns.forEach(function(removeBtn){
