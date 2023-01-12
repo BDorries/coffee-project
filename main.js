@@ -17,7 +17,7 @@ function renderCard(coffee){
     html += `<p class="card-body">`;
     html += `${coffee.description}`;
     html += `</p>`;
-    html += `<button data-id="${coffee.id}" type="button" class="removeBtn" ${loggedInStr}><i class="fa-solid fa-x"></i></button>`;
+    html += `<button data-id="${coffee.id}" type="button" class="removeBtn" ${loggedInStr}><i data-id="${coffee.id}" class="fa-solid fa-x"></i></button>`;
     html += `</div>`;
     return html;
 }
@@ -185,6 +185,7 @@ loginBtn.addEventListener('click', function(){
 //remove button functionality
 function deleteCoffeeById(coffeeId){
     let target = coffees.findIndex(coffee => coffee.id === coffeeId);
+    console.log(target);
     coffees.splice(target,1);
 }
 
