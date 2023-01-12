@@ -1,18 +1,6 @@
 "use strict"
 
-// function renderCoffee(coffee) {
-//     var html = '<tr class="coffee">';
-//     html += '<td>' + coffee.id + '</td>';
-//     html += '<td>' + coffee.name + '</td>';
-//     html += '<td>' + coffee.roast + '</td>';
-//     html += '</tr>';
-//
-//     return html;
-// }
-// function signInMenu(){
-//     let html = ``
-// }
-
+//display coffee cards
 function renderCard(coffee){
 
     let html= `<div class="card">`;
@@ -23,6 +11,7 @@ function renderCard(coffee){
     html += `<p class="card-body">`;
     html += `${coffee.description}`;
     html += `</p>`;
+    html += `<button class="removeBtn"><i data-dbid="${coffee.id}" class="fa-solid fa-x"></i></button>`;
     html += `</div>`;
     return html;
 }
@@ -35,6 +24,13 @@ function renderCoffees(coffees) {
     return html;
 }
 
+document.addEventListener("click", function (e){
+    let target = e.target.id;
+    coffees.splice(target,1);
+})
+
+
+//searchbar
 function updateCoffees(e) {
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
@@ -174,9 +170,14 @@ loginBtn.addEventListener('click', function(){
 
     if(userName.value === 'admin' && password.value === 'admin'){
         document.querySelector('#addCoffeeBtn').style.display = "block";
+        let removeBtns = document.querySelectorAll('.removeBtn');
+        removeBtns.forEach(function(removeBtn){
+            removeBtn.style.display = "block";
+        });
     }
     document.querySelector('#loginForm').style.display = "none";
 });
+
 document.addEventListener('click',function(e){
     console.log(e);
     if (e.target.id !== "loginIcon" && e.target.id !== "username"&& e.target.id !== "password"){

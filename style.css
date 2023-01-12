@@ -121,6 +121,23 @@ i{
     /*text-shadow: 1px 1px 1px #59352d;*/
     font-family: Open Sans, sans-serif;
 }
+.removeBtn{
+    position:absolute;
+    border-radius: 100px;
+    border: 2px solid #a3afbf;
+    margin:3px;
+    color:#BF5349;
+    background-color: #f5ece6;
+    padding:0px;
+    /*display:none;*/
+}
+.removeBtn:hover{
+    cursor: pointer;
+}
+.removeBtn:active{
+    color: #59352d;
+    background-color: #a3afbf;
+}
 hr{
     width: 95%;
     border-top: 5px solid #59352d;
@@ -165,20 +182,19 @@ hr{
 #modal-dimmer{
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 2;
     background-color: #34201b;
     position: fixed;
     top: 0;
     left: 0;
     opacity: .5;
     display: none;
-
 }
 .modalContainer{
     display: none;
     flex-direction: column;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     left: 50%;
     top: 50%;
     transform:translate(-50%,-50%);
@@ -225,7 +241,6 @@ hr{
 }
 .submitBtns:active{
     background-color: #59352d;
-    color: blue;
 }
 #myDropDown{
     display: flex;
