@@ -11,7 +11,7 @@ function renderCard(coffee){
     html += `<p class="card-body">`;
     html += `${coffee.description}`;
     html += `</p>`;
-    html += `<button class="removeBtn"><i data-dbid="${coffee.id}" class="fa-solid fa-x"></i></button>`;
+    html += `<button class="removeBtn"><i data-id="${coffee.id}" class="fa-solid fa-x"></i></button>`;
     html += `</div>`;
     return html;
 }
@@ -24,10 +24,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
-document.addEventListener("click", function (e){
-    let target = e.target.id;
-    coffees.splice(target,1);
-})
+
 
 
 //searchbar
@@ -173,13 +170,25 @@ loginBtn.addEventListener('click', function(){
         let removeBtns = document.querySelectorAll('.removeBtn');
         removeBtns.forEach(function(removeBtn){
             removeBtn.style.display = "block";
+            removeBtn.addEventListener("click", function (e){
+                let coffeeId = parseInt(e.target.dataset.id);
+                console.log(coffeeId);
+                // coffees.splice(coffeeId,1);
+                deleteCoffeeById(coffeeId);
+                updateCoffees();
+            })
         });
     }
     document.querySelector('#loginForm').style.display = "none";
 });
 
+function deleteCoffeeById(coffeeId){
+    let target = coffees[indexOf(coffeeId)];
+    console.log(target)
+    coffees.splice(target,1);
+}
+
 document.addEventListener('click',function(e){
-    console.log(e);
     if (e.target.id !== "loginIcon" && e.target.id !== "username"&& e.target.id !== "password"){
         document.querySelector('#loginForm').style.display = "none";
     }

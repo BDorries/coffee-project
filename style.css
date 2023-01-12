@@ -129,7 +129,7 @@ i{
     color:#BF5349;
     background-color: #f5ece6;
     padding:0px;
-    /*display:none;*/
+    display:none;
 }
 .removeBtn:hover{
     cursor: pointer;
