@@ -127,7 +127,7 @@ function submitModal(){
 //variables for coffee images
 let imgLight = "img/lightRoast.svg";
 let imgMedium = "img/mediumRoast.svg";
-let imgDark = "img/darkRoast.svg";
+let imgDark = "img/darkRoast2.svg";
 
 //variables for coffee description
 let light = "Light brown in color, this roast is generally preferred for milder coffee varieties.";
