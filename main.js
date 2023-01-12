@@ -183,19 +183,19 @@ document.addEventListener('click',function(e){
         document.querySelector('#loginForm').style.display = "none";
     }
 
-    if (e.target.id !== "hamburger" && document.documentElement.clientWidth < 650){
-        document.querySelector('#myDropDown').style.display = "none";
-    }
+    // if (e.target.id !== "hamburger" && document.documentElement.clientWidth < 650){
+    //     document.querySelector('#myDropDown').style.display = "none";
+    // }
 });
 
-document.addEventListener('resize', function (){
-    if(document.documentElement.clientWidth < 650){
-        document.querySelector('#myDropDown').style.display = "none";
-    }
-    if(document.documentElement.clientWidth >= 650){
-        document.querySelector('#myDropDown').style.display = "block";
-    }
-})
+// document.addEventListener('resize', function (){
+//     if(document.documentElement.clientWidth < 650){
+//         document.querySelector('#myDropDown').style.display = "none";
+//     }
+//     if(document.documentElement.clientWidth >= 650){
+//         document.querySelector('#myDropDown').style.display = "flex";
+//     }
+// })
 
 //sign in menu
 let signInBtn = document.getElementById('signIn');

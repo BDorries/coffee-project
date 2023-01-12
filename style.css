@@ -227,22 +227,29 @@ hr{
     background-color: #59352d;
     color: blue;
 }
-
+#myDropDown{
+    display: flex;
+    justify-content: start;
+}
+.hide{
+    display: none;
+}
 
 @media screen and (min-width:650px) {
-    #btn1 {
-        display:none;
-    }
+    /*#btn1 {*/
+    /*    display:none;*/
+    /*}*/
     .searchbar{
         display:flex;
     }
     #myDropDown {
-        display: flex;
         flex-direction: row;
     }
 }
 @media screen and (max-width:650px) {
     #myDropDown {
-        display:none;
+        flex-direction: column;
+        margin-top: 0;
+        padding-top: 0;
     }
 }
