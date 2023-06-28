@@ -8,7 +8,8 @@
     <script src="https://kit.fontawesome.com/a88297ca40.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Open+Sans:wght@400&display=swap"
+          rel="stylesheet">
 
 </head>
 <body>
@@ -35,39 +36,39 @@
             <form id="loginForm" class="loginForm">
                 <input id="username" class="logInBar" type="text" placeholder="Username" value="admin">
                 <input id="password" class="logInBar" type="password" placeholder="Password" value="admin">
-                <button type="button" id="loginBtn" class="searchbar" >Log in</button>
+                <button type="button" id="loginBtn" class="searchbar">Log in</button>
             </form>
         </div>
         <button id="addCoffeeBtn" class="buttons"><i class="fa-regular fa-plus fa-2x"></i></button>
     </div>
 </nav>
 
-    <div class="mainContent">
-        <div class="cards"></div>
-    </div>
+<div class="mainContent">
+    <div class="cards"></div>
+</div>
 
-    <div id="inputModal" class="modalContainer">
-        <h1 class="modalHeader">Add A Coffee!</h1>
-        <form class="modalContent">
-            <div>
-                <label class="modalSubHeaders" for="coffeeName">Coffee Name</label>
-                <input class="modalBoxes" type="text" id="coffeeName" name="Coffee Name" placeholder="Coffee Name">
-            </div>
-            <div>
-                <label class="modalSubHeaders" for="roastType">Roast Type</label>
-                <select class="modalBoxes" id="roastType">
-                    <option selected>All...</option>
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select>
-            </div>
-            <div class="modalButtons">
-                <button type="button" id="newCoffeeSubmit" class="modalBtn">Submit</button>
-                <button type="button" id="newCoffeeCancel" class="modalBtn">Cancel</button>
-            </div>
-        </form>
-    </div>
+<div id="inputModal" class="modalContainer">
+    <h1 class="modalHeader">Add A Coffee!</h1>
+    <form class="modalContent">
+        <div>
+            <label class="modalSubHeaders" for="coffeeName">Coffee Name</label>
+            <input class="modalBoxes" type="text" id="coffeeName" name="Coffee Name" placeholder="Coffee Name">
+        </div>
+        <div>
+            <label class="modalSubHeaders" for="roastType">Roast Type</label>
+            <select class="modalBoxes" id="roastType">
+                <option selected>All...</option>
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
+        </div>
+        <div class="modalButtons">
+            <button type="button" id="newCoffeeSubmit" class="modalBtn">Submit</button>
+            <button type="button" id="newCoffeeCancel" class="modalBtn">Cancel</button>
+        </div>
+    </form>
+</div>
 
 <script src="main.js"></script>
 </body>
