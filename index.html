@@ -49,11 +49,23 @@
     <div id="inputModal" class="modalContainer">
         <h1 class="modalHeader">Add A Coffee!</h1>
         <form class="modalContent">
-            <label class="modalSubHeaders" for="coffeeName">Coffee Name</label><br>
-            <input class="modalBoxes" type="text" id="coffeeName" name="Coffee Name" value="Coffee Name"><br>
-            <label class="modalSubHeaders" for="roastType">Roast Type</label><br>
-            <input class="modalBoxes" type="text" id="roastType" name="roastType" value="Roast Type"><br><br>
-            <button type="button" id="modalBtn">Submit</button>
+            <div>
+                <label class="modalSubHeaders" for="coffeeName">Coffee Name</label>
+                <input class="modalBoxes" type="text" id="coffeeName" name="Coffee Name" placeholder="Coffee Name">
+            </div>
+            <div>
+                <label class="modalSubHeaders" for="roastType">Roast Type</label>
+                <select class="modalBoxes" id="roastType">
+                    <option selected>All...</option>
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+            </div>
+            <div class="modalButtons">
+                <button type="button" id="newCoffeeSubmit" class="modalBtn">Submit</button>
+                <button type="button" id="newCoffeeCancel" class="modalBtn">Cancel</button>
+            </div>
         </form>
     </div>
 

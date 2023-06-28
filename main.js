@@ -161,8 +161,14 @@ addCoffeeBtn.addEventListener('click', function (){
     modal.style.display = "flex";
 });
 
-let modalBtn = document.getElementById('modalBtn');
-modalBtn.addEventListener('click',submitModal);
+let newCoffeeSubmit = document.getElementById('newCoffeeSubmit');
+newCoffeeSubmit.addEventListener('click',submitModal);
+
+let newCoffeeCancel = document.getElementById('newCoffeeCancel');
+newCoffeeCancel.addEventListener('click', function(){
+    modal.style.display = "none";
+    document.querySelector('#modal-dimmer').style.display = "none";
+});
 
 //navbar functionality
 function dropDown(){

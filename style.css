@@ -39,7 +39,7 @@ html{
     box-shadow: 2px 2px 4px #59352d;
 }
 .searchbar, .logInBar{
-    width:100px;
+    width: 300px;
     border:1px solid #a3afbf;
     border-radius: 5px;
     height: 25px;
@@ -198,12 +198,15 @@ hr{
     left: 50%;
     top: 50%;
     transform:translate(-50%,-50%);
-    width: 300px;
-    height: 300px;
+    width: 40%;
+    height: 35%;
     background-color: #D9A689;
     border: 5px solid #59352d;
     border-radius: 25px;
     text-align: center;
+}
+.modalContent{
+    gap: 2rem;
 }
 .modalHeader{
     margin:40px 0px 15px 0px;
@@ -218,11 +221,10 @@ hr{
 }
 .modalBoxes{
     margin:8px;
-    width:75%;
+    width:50%;
     border:1px solid #a3afbf;
     border-radius: 5px;
     height: 30px;
-    /*margin:0px 5px;*/
     background: #f5ece6;
     box-shadow: 2px 2px 4px #59352d;
     color:#a3afbf;
@@ -230,14 +232,17 @@ hr{
 .modalBoxes:focus{
     color: #59352d;
 }
-#modalBtn{
-    width:50%;
+.modalBtn{
+    width:30%;
     border:1px solid #a3afbf;
     border-radius: 5px;
     height: 30px;
     background: #f5ece6;
     box-shadow: 2px 2px 4px #59352d;
     color:#34201b;
+}
+.modalButtons{
+    margin: auto 0;
 }
 .submitBtns:active{
     background-color: #59352d;
@@ -248,9 +253,6 @@ hr{
 }
 
 @media screen and (min-width:650px) {
-    /*#btn1 {*/
-    /*    display:none;*/
-    /*}*/
     .searchbar{
         display:flex;
     }
