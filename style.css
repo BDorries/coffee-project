@@ -48,7 +48,6 @@ html{
     box-shadow: 2px 2px 4px #59352d;
     font-family: Open Sans, sans-serif;
 }
-
 .buttons{
     /*align-items: center;*/
     color: #f5ece6;
@@ -97,15 +96,12 @@ i{
     align-items: center;
     border-radius: 100px;
 }
-
 .card .card-title{
     margin: 0;
     padding: 2px;
     text-align: center;
     color: #34201b;
-    /*text-shadow: 1px 1px 1px #BF5349;*/
     font-family: Berkshire Swash, sans-serif;
-
 }
 .card .card-body{
     margin: 0;
@@ -118,7 +114,6 @@ i{
     padding-left: 5px;
     padding-top: 5px;
     color: #BF5349;
-    /*text-shadow: 1px 1px 1px #59352d;*/
     font-family: Open Sans, sans-serif;
 }
 .removeBtn{
