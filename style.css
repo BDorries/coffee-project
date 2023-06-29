@@ -12,7 +12,7 @@ body{
     margin:0;
 }
 html{
-    background-color: var(--cream-coffee);
+    background-color: black;
 }
 .mainContent{
     padding:10px;
