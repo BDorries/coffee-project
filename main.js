@@ -38,6 +38,7 @@ function updateCoffees(e) {
     let filteredCoffees = [];
     let recorded = document.getElementById("searchbar").value.trim();
     coffees.forEach(function(coffee) {
+        document.querySelector('#no-search').style.display="none";
         if(selectedRoast === "All..." && recorded === ""){
             filteredCoffees.push(coffee);
             return;
@@ -53,9 +54,13 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
             return;
         }
+        if(filteredCoffees.length < 1){
+            document.querySelector('#no-search').style.display="block";
+        }
     });
-    //making remove buttons work
     cardsDiv.innerHTML = renderCoffees(filteredCoffees);
+
+    //making remove buttons work
     let removeBtns = document.querySelectorAll('.removeBtn');
     removeBtns.forEach(function(removeBtn){
         removeBtn.addEventListener("click", function (e){
@@ -71,12 +76,6 @@ function updateCoffees(e) {
 let userName = document.querySelector("#username");
 let password = document.querySelector("#password");
 let loginBtn = document.querySelector("#loginBtn");
-
-function logIn(username,password){
-    if(username === "admin" && password === "admin"){
-    //TODO: display add a coffee function
-    }
-}
 
 //display associated coffee description on new card
 function getCoffeeDesc(coffee){

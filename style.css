@@ -19,8 +19,9 @@ html{
     margin: 0px;
 }
 .page-wrapper{
-    background-image: url("img/Coffee-bg.jpeg");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("img/Coffee-bg.jpeg");
     background-size: cover;
+    background-attachment: fixed;
 }
 .top-banner{
     display:flex;
@@ -33,7 +34,10 @@ html{
     display:flex;
     align-items: center;
 }
-
+#no-search{
+    display: none;
+    color: #f5ece6;
+}
 .top-banner h1{
     color: var(--basically-white);
     text-shadow: 2px 2px 4px black;
@@ -104,7 +108,7 @@ hr.card-break{
     padding: 0 5px;
     margin:0;
     align-items: center;
-    border-radius: 100px;
+    border-radius: 50%;
 }
 .card .card-title{
     margin: 0;
