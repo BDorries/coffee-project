@@ -13,63 +13,63 @@
 
 </head>
 <body>
+<div class="page-wrapper">
+    <div id="modal-dimmer"></div>
 
-<div id="modal-dimmer"></div>
+    <nav class="top-banner">
+        <h1>Coffee House</h1>
+        <div class="navbar">
+            <div class="dropdown">
+                <form id="myDropDown" class="searchForm">
+                    <input id="searchbar" class="searchbar" type="text" placeholder="Search..." name="search">
+                    <label for="roast-selection"></label>
+                    <select class="searchbar" id="roast-selection">
+                        <option selected>All...</option>
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                </form>
+            </div>
+            <div class="dropdown">
+                <button id="signIn" class="buttons"><i id="loginIcon" class="fa-regular fa-user fa-2x"></i></button>
+                <form id="loginForm" class="loginForm">
+                    <input id="username" class="logInBar" type="text" placeholder="Username" value="admin">
+                    <input id="password" class="logInBar" type="password" placeholder="Password" value="admin">
+                    <button type="button" id="loginBtn" class="searchbar">Log in</button>
+                </form>
+            </div>
+            <button id="addCoffeeBtn" class="buttons"><i class="fa-regular fa-plus fa-2x"></i></button>
+        </div>
+    </nav>
 
-<nav class="top-banner">
-    <h1>Coffee House</h1>
-    <div class="navbar">
-        <div class="dropdown">
-            <form id="myDropDown" class="searchForm">
-                <input id="searchbar" class="searchbar" type="text" placeholder="Search..." name="search">
-                <label for="roast-selection"></label>
-                <select class="searchbar" id="roast-selection">
+    <div class="mainContent">
+        <div class="cards"></div>
+    </div>
+
+    <div id="inputModal" class="modalContainer">
+        <h1 class="modalHeader">Add A Coffee!</h1>
+        <form class="modalContent">
+            <div>
+                <label class="modalSubHeaders" for="coffeeName">Coffee Name</label>
+                <input class="modalBoxes" type="text" id="coffeeName" name="Coffee Name" placeholder="Coffee Name">
+            </div>
+            <div>
+                <label class="modalSubHeaders" for="roastType">Roast Type</label>
+                <select class="modalBoxes" id="roastType">
                     <option selected>All...</option>
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
-            </form>
-        </div>
-        <div class="dropdown">
-            <button id="signIn" class="buttons"><i id="loginIcon" class="fa-regular fa-user fa-2x"></i></button>
-            <form id="loginForm" class="loginForm">
-                <input id="username" class="logInBar" type="text" placeholder="Username" value="admin">
-                <input id="password" class="logInBar" type="password" placeholder="Password" value="admin">
-                <button type="button" id="loginBtn" class="searchbar">Log in</button>
-            </form>
-        </div>
-        <button id="addCoffeeBtn" class="buttons"><i class="fa-regular fa-plus fa-2x"></i></button>
+            </div>
+            <div class="modalButtons">
+                <button type="button" id="newCoffeeSubmit" class="modalBtn">Submit</button>
+                <button type="button" id="newCoffeeCancel" class="modalBtn">Cancel</button>
+            </div>
+        </form>
     </div>
-</nav>
-
-<div class="mainContent">
-    <div class="cards"></div>
 </div>
-
-<div id="inputModal" class="modalContainer">
-    <h1 class="modalHeader">Add A Coffee!</h1>
-    <form class="modalContent">
-        <div>
-            <label class="modalSubHeaders" for="coffeeName">Coffee Name</label>
-            <input class="modalBoxes" type="text" id="coffeeName" name="Coffee Name" placeholder="Coffee Name">
-        </div>
-        <div>
-            <label class="modalSubHeaders" for="roastType">Roast Type</label>
-            <select class="modalBoxes" id="roastType">
-                <option selected>All...</option>
-                <option>light</option>
-                <option>medium</option>
-                <option>dark</option>
-            </select>
-        </div>
-        <div class="modalButtons">
-            <button type="button" id="newCoffeeSubmit" class="modalBtn">Submit</button>
-            <button type="button" id="newCoffeeCancel" class="modalBtn">Cancel</button>
-        </div>
-    </form>
-</div>
-
 <script src="main.js"></script>
 </body>
 </html>

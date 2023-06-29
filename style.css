@@ -1,21 +1,33 @@
+:root{
+    --lt-grey: #a3afbf;
+    --cream-coffee: #d9bca3;
+    --caramel-coffee: #D9A689;
+    --basically-white: #f5ece6;
+    --mocha: #59352d;
+    --dark-roast: #34201b;
+    --salmon: #BF5349;
+}
+
 body{
     margin:0;
 }
 html{
-    background-color: #d9bca3;
+    background-color: var(--cream-coffee);
 }
 .mainContent{
     padding:10px;
-    margin:10px;
+    margin: 0px;
+}
+.page-wrapper{
+    background-image: url("img/Coffee-bg.jpeg");
+    background-size: cover;
 }
 .top-banner{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background-image: url("img/CoffeeBeanHeader.png");
     margin: auto;
     padding: 0px 20px;
-    border: 2px solid #59352d;
 }
 .submit{
     display:flex;
@@ -23,7 +35,7 @@ html{
 }
 
 .top-banner h1{
-    color: #f5ece6;
+    color: var(--basically-white);
     text-shadow: 2px 2px 4px black;
     font-size: 50px;
     margin:10px;
@@ -31,33 +43,31 @@ html{
 }
 #roast-selection{
     width:75px;
-    border:1px solid #a3afbf;
+    border:1px solid var(--lt-grey);
     border-radius: 5px;
     height: 30px;
     margin:0px 5px;
-    background: #f5ece6;
-    box-shadow: 2px 2px 4px #59352d;
+    background: var(--basically-white);
+    box-shadow: 2px 2px 4px var(--mocha);
 }
 .searchbar, .logInBar{
     width: 300px;
-    border:1px solid #a3afbf;
+    border:1px solid var(--lt-grey);
     border-radius: 5px;
     height: 25px;
     margin:5px 0px;
-    background: #f5ece6;
-    box-shadow: 2px 2px 4px #59352d;
+    background: var(--basically-white);
+    box-shadow: 2px 2px 4px var(--mocha);
     font-family: Open Sans, sans-serif;
 }
 .buttons{
-    /*align-items: center;*/
     color: #f5ece6;
     text-shadow: 4px 4px 8px black;
     background-color: transparent;
-    /*border:none;*/
     padding:0px 5px 0px 5px;
     margin: 2px;
-    border: 4px solid #f5ece6;
-    border-radius:50px;
+    border: 1px solid var(--basically-white);
+    border-radius:50%;
 }
 .buttons:hover{
     cursor: pointer;
@@ -72,23 +82,23 @@ i{
     justify-content:start;
 }
 #loginBtn{
-    color: #34201b;
+    color: var(--dark-roast);
 }
 .buttons:active{
-    color: #59352d;
+    color: var(--mocha);
 }
 #addCoffeeBtn{
     display: none;
 }
 .card{
-    border: 2px solid #a3afbf;
     width: 200px;
     height: 350px;
     display: flex;
     flex-direction: column;
-    background-color: #f5ece6;
     border-radius: 15px;
-    box-shadow: 4px 4px 4px #3f2a21;
+}
+hr.card-break{
+    border: 1px solid var(--basically-white);
 }
 .card .image{
     padding: 0 5px;
@@ -100,47 +110,48 @@ i{
     margin: 0;
     padding: 2px;
     text-align: center;
-    color: #34201b;
+    color: var(--lt-grey);
     font-family: Berkshire Swash, sans-serif;
 }
 .card .card-body{
     margin: 0;
     padding: 0 5px;
-    color: #59352d;
+    color: var(--lt-grey);
     font-family: Open Sans, sans-serif;
 }
 .card .roast-type{
     margin: 0;
     padding-left: 5px;
     padding-top: 5px;
-    color: #BF5349;
+    color: var(--salmon);
     font-family: Open Sans, sans-serif;
 }
 .removeBtn{
     position:absolute;
     border-radius: 100px;
-    border: 2px solid #a3afbf;
+    border: 2px solid var(--lt-grey);
     margin:2px;
-    color:#BF5349;
-    background-color: #f5ece6;
+    color: var(--salmon);
+    background-color: var(--basically-white);
     padding:0;
 }
 .removeBtn:hover{
     cursor: pointer;
 }
 .removeBtn:active{
-    color: #59352d;
-    background-color: #a3afbf;
+    color: var(--mocha);
+    background-color: var(--lt-grey);
 }
 hr{
     width: 95%;
-    border-top: 5px solid #59352d;
-    background-color: #a3afbf;
+    border-top: 5px solid var(--mocha);
+    background-color: var(--lt-grey);
 }
 .cards{
     width: 100%;
     display:grid;
-    gap: .5rem;
+    gap: 3rem;
+    margin: 0 30px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 .navbar{
@@ -178,7 +189,7 @@ hr{
     width: 100vw;
     height: 100vh;
     z-index: 2;
-    background-color: #34201b;
+    background-color: var(--dark-roast);
     position: fixed;
     top: 0;
     left: 0;
@@ -195,8 +206,8 @@ hr{
     transform:translate(-50%,-50%);
     width: 40%;
     height: 35%;
-    background-color: #D9A689;
-    border: 5px solid #59352d;
+    background-color: var(--caramel-coffee);
+    border: 5px solid var(--mocha);
     border-radius: 25px;
     text-align: center;
 }
@@ -205,7 +216,7 @@ hr{
 }
 .modalHeader{
     margin:40px 0px 15px 0px;
-    color:#f5ece6;
+    color: var(--basically-white);
     text-shadow: 2px 2px 4px black;
 }
 .modalSubHeaders{
@@ -217,30 +228,30 @@ hr{
 .modalBoxes{
     margin:8px;
     width:50%;
-    border:1px solid #a3afbf;
+    border:1px solid var(--lt-grey);
     border-radius: 5px;
     height: 30px;
     background: #f5ece6;
-    box-shadow: 2px 2px 4px #59352d;
-    color:#a3afbf;
+    box-shadow: 2px 2px 4px var(--mocha);
+    color: var(--lt-grey);
 }
 .modalBoxes:focus{
-    color: #59352d;
+    color: var(--mocha);
 }
 .modalBtn{
     width:30%;
-    border:1px solid #a3afbf;
+    border:1px solid var(--lt-grey);
     border-radius: 5px;
     height: 30px;
-    background: #f5ece6;
-    box-shadow: 2px 2px 4px #59352d;
-    color:#34201b;
+    background: var(--basically-white);
+    box-shadow: 2px 2px 4px var(--mocha);
+    color: var(--dark-roast);
 }
 .modalButtons{
     margin: auto 0;
 }
 .submitBtns:active{
-    background-color: #59352d;
+    background-color: var(--mocha);
 }
 #myDropDown{
     display: flex;

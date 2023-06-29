@@ -8,11 +8,13 @@ function renderCard(coffee){
     if(isAdmin){
         loggedInStr = "";
     }
+    let roastName = coffee.roast;
+    roastName = roastName.charAt(0).toUpperCase()+roastName.slice(1);
     let html= `<div class="card">`;
     html += `<h2 class="card-title">${coffee.name}</h2>`;
     html += `<img class="image" src="${coffee.image}" alt="Coffee Pic">`;
-    html += `<h3 class="roast-type">${coffee.roast}</h3>`;
-    html += `<hr>`;
+    html += `<h3 class="roast-type">${roastName}</h3>`;
+    html += `<hr class="card-break">`;
     html += `<p class="card-body">`;
     html += `${coffee.description}`;
     html += `</p>`;
