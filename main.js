@@ -10,66 +10,46 @@ function renderCard(coffee){
     }
     let roastName = coffee.roast;
     roastName = roastName.charAt(0).toUpperCase()+roastName.slice(1);
-    let html= `<div class="card">`;
-    html += `<h2 class="card-title">${coffee.name}</h2>`;
-    html += `<img class="image" src="${coffee.image}" alt="Coffee Pic">`;
-    html += `<h3 class="roast-type">${roastName}</h3>`;
-    html += `<hr class="card-break">`;
-    html += `<p class="card-body">`;
-    html += `${coffee.description}`;
-    html += `</p>`;
-    html += `<button data-id="${coffee.id}" type="button" class="removeBtn" ${loggedInStr}><i data-id="${coffee.id}" class="fa-solid fa-x"></i></button>`;
-    html += `</div>`;
-    return html;
-}
-
-//display coffee cards
-function renderCoffees(coffees) {
-    let html = '';
-    for(let i = 0; i < coffees.length; i++) {
-        html += renderCard(coffees[i]);
-    }
-    return html;
+    let coffeeNode = document.createElement('div');
+    coffeeNode.classList.add('card');
+    coffeeNode.innerHTML = `
+        <h2 class="card-title">${coffee.name}</h2>\
+        <img class="image" src="${coffee.image}" alt="Coffee Pic">
+        <h3 class="roast-type">${roastName}</h3>
+        <hr class="card-break">
+        <p class="card-body">
+            ${coffee.description}
+        </p>
+        <button data-id="${coffee.id}" type="button" class="removeBtn" ${loggedInStr}><i data-id="${coffee.id}" class="fa-solid fa-x"></i></button>
+    `;
+    let removeButton = coffeeNode.querySelector('button');
+    removeButton.addEventListener('click', function(){
+        coffeeNode.remove();
+        coffees = coffees.filter(thisCoffee => thisCoffee.name !== coffee.name);
+    });
+    return coffeeNode;
 }
 
 //searchbar functionality
 function updateCoffees(e) {
-    let selectedRoast = roastSelection.value;
-    let filteredCoffees = [];
-    let recorded = document.getElementById("searchbar").value.trim();
-    coffees.forEach(function(coffee) {
-        document.querySelector('#no-search').style.display="none";
-        if(selectedRoast === "All..." && recorded === ""){
-            filteredCoffees.push(coffee);
-            return;
-        }
-        if (selectedRoast !== "All..." && coffee.roast !== selectedRoast){
-            return;
-        }
-        if ((coffee.name.toLowerCase().includes(recorded) || coffee.name.includes(recorded)) && coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-            return;
-        }
-        if(selectedRoast === "All..." && (coffee.name.toLowerCase().includes(recorded) || coffee.name.includes(recorded))){
-            filteredCoffees.push(coffee);
-            return;
-        }
-        if(filteredCoffees.length < 1){
-            document.querySelector('#no-search').style.display="block";
-        }
-    });
-    cardsDiv.innerHTML = renderCoffees(filteredCoffees);
-
-    //making remove buttons work
-    let removeBtns = document.querySelectorAll('.removeBtn');
-    removeBtns.forEach(function(removeBtn){
-        removeBtn.addEventListener("click", function (e){
-            let coffeeId = parseInt(e.target.dataset.id);
-            console.log(coffeeId);
-            deleteCoffeeById(coffeeId);
-            updateCoffees();
-        })
-    });
+    document.querySelector('.cards').innerHTML = '';
+    let selectedRoast = roastSelection.value.toString().toLowerCase();
+    let searchValue = document.getElementById("searchbar").value.trim();
+    console.log(searchValue);
+    document.querySelector('#no-search').style.display="none";
+    let filteredCoffees = coffees;
+    if (selectedRoast !== 'all...') {
+        filteredCoffees = filteredCoffees.filter(coffee => coffee.roast.toLowerCase() === selectedRoast);
+    }
+    if (searchValue !== '') {
+        filteredCoffees = filteredCoffees.filter(coffee => coffee.name.toLowerCase().includes(searchValue))
+    }
+    if(filteredCoffees.length === 0){
+        document.querySelector('#no-search').style.display="block";
+    }
+    for(let coffee of filteredCoffees){
+        cardsDiv.appendChild(renderCard(coffee));
+    }
 }
 
 //login functionality
@@ -189,13 +169,6 @@ loginBtn.addEventListener('click', function(){
     }
     document.querySelector('#loginForm').style.display = "none";
 });
-
-//remove button functionality
-function deleteCoffeeById(coffeeId){
-    let target = coffees.findIndex(coffee => coffee.id === coffeeId);
-    console.log(target);
-    coffees.splice(target,1);
-}
 
 //closes login dropdown
 document.addEventListener('click',function(e){
